@@ -16,9 +16,9 @@ public interface BookClient {
     @GetMapping("/")
     Book getBooks();
 
-    default Book getBooksFallback(Throwable e) {
+    default Book getBooksFallback(Throwable e) throws Throwable {
         log.error("Here it comes with error", e);
-        return new Book("book FB");
+        throw e;
     }
 
 }
