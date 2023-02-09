@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: can-feign
+  cloud:
+    discovery:
+      client:
+        simple:
+          instances:
+            book:
+              - uri: http://localhost:8081
