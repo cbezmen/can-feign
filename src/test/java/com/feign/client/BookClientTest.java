@@ -1,11 +1,10 @@
 package com.feign.client;
 
-import feign.RetryableException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 @SpringBootTest
 class BookClientTest {
@@ -14,9 +13,9 @@ class BookClientTest {
     private BookClient bookClient;
 
     @Test
-    void errorWrappedWithNoFallbackAvailableException() {
+    void callExceptionFallback() {
         assertThatThrownBy(() -> bookClient.getBooks())
-                .isInstanceOf(RetryableException.class);
+                .isInstanceOf(IllegalStateException.class);
     }
 
 

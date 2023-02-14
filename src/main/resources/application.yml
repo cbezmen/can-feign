@@ -8,3 +8,6 @@ spring:
           instances:
             book:
               - uri: http://localhost:8081
+    openfeign:
+      circuitbreaker:
+        enabled: true
