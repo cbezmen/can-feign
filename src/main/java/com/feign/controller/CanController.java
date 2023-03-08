@@ -31,8 +31,9 @@ public class CanController {
     }
 
     @GetMapping("/cache")
-    public void cach() {
+    public Map<String, Book> cache() {
         Map<String, Book> nativeCache = (Map<String, Book>) cacheManager.getCache(BOOK_CACHE).getNativeCache();
         log.info("{}", nativeCache);
+        return nativeCache;
     }
 }
