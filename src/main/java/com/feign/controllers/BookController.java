@@ -11,7 +11,7 @@ public class BookController {
 
     private final BookClient bookClient;
 
-    @GetMapping("/fetch-books")
+    @GetMapping("/test")
     public void testBook() {
         bookClient.getBooks();
     }

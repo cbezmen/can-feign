@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @FeignClient(name = "book", contextId = "bookClient", path = "/customPrefix")
 public interface BookClient {
 
-    @GetMapping("/")
+    @GetMapping("/fetch-books")
     Book getBooks();
 
 
